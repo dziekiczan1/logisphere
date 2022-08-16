@@ -4,12 +4,16 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import loadRoutes from "./routes/loads.js";
+
 const app = express();
 dotenv.config({ path: ".env.development.local" });
 
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+app.use("/loads", loadRoutes);
 
 app.get("/", (req, res) => {
   res.send("Its working");
