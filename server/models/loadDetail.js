@@ -9,29 +9,13 @@ const AddressSchema = mongoose.Schema({
 const loadSchema = mongoose.Schema({
   shipper: {
     name: String,
-    address: {
-      type: AddressSchema,
-      required: true,
-    },
+    city: String,
+    street: String,
+    zipcode: String,
     date: Date,
     time: String,
     extra: String,
   },
-  consignee: {
-    name: String,
-    address: {
-      type: AddressSchema,
-      required: true,
-    },
-    date: Date,
-    time: String,
-    extra: String,
-  },
-  weight: Number,
-  trailer: String,
-  commodity: String,
-  distance: Number,
-  price: Number,
 });
 
 const LoadDetail = mongoose.model("LoadDetail", loadSchema);
