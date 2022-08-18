@@ -18,6 +18,15 @@ const Form = () => {
       time: "",
       extra: "",
     },
+    consignee: {
+      name: "",
+      city: "",
+      street: "",
+      zipcode: "",
+      date: "",
+      time: "",
+      extra: "",
+    },
   });
 
   const handleSubmit = (e) => {
@@ -27,15 +36,7 @@ const Form = () => {
 
   const clear = () => {};
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete="off"
-      onSubmit={handleSubmit}
-    >
+    <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
       <TextField
         name="sName"
         value={loadData.shipper.name}
@@ -131,6 +132,104 @@ const Form = () => {
         }
         id="outlined-basic"
         label="shipextra"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeName"
+        value={loadData.consignee.name}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, name: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Consignee Name"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeCity"
+        value={loadData.consignee.city}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, city: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Consignee City"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeStreet"
+        value={loadData.consignee.street}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, street: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Consignee Street"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeZipcode"
+        value={loadData.consignee.zipcode}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, zipcode: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Consignee Zipcode"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeDate"
+        value={loadData.consignee.date}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, date: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Delivery Date"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeTime"
+        value={loadData.consignee.time}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, time: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Delivery Time"
+        variant="outlined"
+      />
+
+      <TextField
+        name="consigneeExtra"
+        value={loadData.consignee.extra}
+        onChange={(e) =>
+          setLoadData({
+            ...loadData,
+            consignee: { ...loadData.consignee, extra: e.target.value },
+          })
+        }
+        id="outlined-basic"
+        label="Extra Information"
         variant="outlined"
       />
 
