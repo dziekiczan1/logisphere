@@ -39,7 +39,33 @@ const Form = () => {
     dispatch(createLoad(loadData));
   };
 
-  const clear = () => {};
+  const clear = () => {
+    setLoadData({
+      shipper: {
+        name: "",
+        city: "",
+        street: "",
+        zipcode: "",
+        date: "",
+        time: "",
+        extra: "",
+      },
+      consignee: {
+        name: "",
+        city: "",
+        street: "",
+        zipcode: "",
+        date: "",
+        time: "",
+        extra: "",
+      },
+      trailer: "",
+      weight: "",
+      distance: "",
+      commodity: "",
+      price: "",
+    });
+  };
   return (
     <Box
       component="form"
@@ -50,7 +76,7 @@ const Form = () => {
     >
       <div className="bg-gray-100 px-4 py-2 w-2/3 my-2 ">
         <h4 className="text-lg font-bold">Shipper</h4>
-        <div className="gap-4 flex flex-wrap justify-between mt-2">
+        <div className="gap-4 flex flex-wrap justify-between mt-6">
           <TextField
             name="shipperName"
             value={loadData.shipper.name}
@@ -160,7 +186,7 @@ const Form = () => {
       </div>
       <div className="bg-gray-100 px-4 py-2 w-2/3 my-2">
         <h4 className="text-lg font-bold">Consignee</h4>
-        <div className="gap-4 flex flex-wrap justify-between mt-2">
+        <div className="gap-4 flex flex-wrap justify-between mt-6">
           <TextField
             name="consigneeName"
             value={loadData.consignee.name}
@@ -271,7 +297,7 @@ const Form = () => {
 
       <div className="bg-gray-100 px-4 py-2 w-2/3 my-2">
         <h4 className="text-lg font-bold">Freight Information</h4>
-        <div className="gap-4 flex flex-wrap justify-between mt-2">
+        <div className="gap-4 flex flex-wrap justify-between mt-6">
           <TextField
             name="trailerType"
             value={loadData.trailer}
