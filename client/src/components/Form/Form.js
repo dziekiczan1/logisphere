@@ -41,8 +41,14 @@ const Form = () => {
 
   const clear = () => {};
   return (
-    <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
-      <div className="bg-gray-100 px-4 py-2 w-2/3 my-2">
+    <Box
+      component="form"
+      noValidate
+      autoComplete="off"
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center"
+    >
+      <div className="bg-gray-100 px-4 py-2 w-2/3 my-2 ">
         <h4 className="text-lg font-bold">Shipper</h4>
         <div className="gap-4 flex flex-wrap justify-between mt-2">
           <TextField
@@ -259,6 +265,85 @@ const Form = () => {
             label="Extra Information"
             variant="outlined"
             className="w-full"
+          />
+        </div>
+      </div>
+
+      <div className="bg-gray-100 px-4 py-2 w-2/3 my-2">
+        <h4 className="text-lg font-bold">Freight Information</h4>
+        <div className="gap-4 flex flex-wrap justify-between mt-2">
+          <TextField
+            name="trailerType"
+            value={loadData.trailer}
+            onChange={(e) =>
+              setLoadData({
+                ...loadData,
+                trailer: e.target.value,
+              })
+            }
+            id="outlined-basic"
+            label="Trailer Type"
+            variant="outlined"
+            className="w-1/4"
+          />
+          <TextField
+            name="weight"
+            value={loadData.weight}
+            onChange={(e) =>
+              setLoadData({
+                ...loadData,
+                weight: e.target.value,
+              })
+            }
+            id="outlined-basic"
+            label="Weight"
+            variant="outlined"
+            className="w-1/4"
+          />
+
+          <TextField
+            name="distance"
+            value={loadData.distance}
+            onChange={(e) =>
+              setLoadData({
+                ...loadData,
+                distance: e.target.value,
+              })
+            }
+            id="outlined-basic"
+            label="Distance"
+            variant="outlined"
+            className="w-1/4"
+          />
+
+          <TextField
+            name="commodity"
+            value={loadData.commodity}
+            onChange={(e) =>
+              setLoadData({
+                ...loadData,
+                commodity: e.target.value,
+              })
+            }
+            id="outlined-basic"
+            label="Commodity"
+            variant="outlined"
+            className="w-1/4"
+          />
+
+          <TextField
+            name="price"
+            value={loadData.price}
+            onChange={(e) =>
+              setLoadData({
+                ...loadData,
+                price: e.target.value,
+              })
+            }
+            id="outlined-basic"
+            label="Price"
+            variant="outlined"
+            className="w-1/4"
           />
         </div>
       </div>
