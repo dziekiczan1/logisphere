@@ -4,6 +4,7 @@ import { createLoad } from "../../redux/loadSlice";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import InputAdornment from "@mui/material/InputAdornment";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -325,6 +326,9 @@ const Form = () => {
             label="Weight"
             variant="outlined"
             className="w-1/4"
+            InputProps={{
+              endAdornment: <InputAdornment position="end">lbs</InputAdornment>,
+            }}
           />
 
           <TextField
@@ -340,6 +344,11 @@ const Form = () => {
             label="Distance"
             variant="outlined"
             className="w-1/4"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">miles</InputAdornment>
+              ),
+            }}
           />
 
           <TextField
@@ -370,6 +379,9 @@ const Form = () => {
             label="Price"
             variant="outlined"
             className="w-1/4"
+            InputProps={{
+              endAdornment: <InputAdornment position="end">$</InputAdornment>,
+            }}
           />
         </div>
       </div>
