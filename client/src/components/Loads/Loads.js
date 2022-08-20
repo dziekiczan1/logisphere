@@ -5,14 +5,18 @@ import Load from "./Load/Load";
 const Loads = () => {
   const loads = useSelector((state) => state.loads);
 
-  return !loads.length ? (
-    <CircularProgress />
-  ) : (
-    loads.map((load) => (
-      <div key={load._id}>
-        <Load load={load} />
-      </div>
-    ))
+  return (
+    <div className="border-4 border-2 border-gray-200 rounded-lg min-h-full">
+      {!loads.length ? (
+        <CircularProgress />
+      ) : (
+        loads.map((load) => (
+          <div key={load._id}>
+            <Load load={load} />
+          </div>
+        ))
+      )}
+    </div>
   );
 };
 
