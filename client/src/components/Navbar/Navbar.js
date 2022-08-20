@@ -2,7 +2,7 @@ import { GiHolosphere } from "react-icons/gi";
 
 const Navbar = () => {
   return (
-    <div className="flex flex-col justify-between p-4 md:flex-row">
+    <div className="flex flex-col justify-between p-2 md:flex-row md:p-4">
       <div className="flex items-center justify-center">
         <GiHolosphere className="text-6xl text-sky-500" />
         <span className="text-4xl tracking-wide uppercase font-semibold">
@@ -10,12 +10,18 @@ const Navbar = () => {
         </span>
       </div>
       <div className="flex items-center justify-center">
-        <ul className="flex flex-col justify-center md:flex-row">
+        <ul className="flex flex-row justify-center gap-2 mt-4 md:gap-4">
           <li class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium text-center">
             <a href="#">Find loads</a>
           </li>
           <li class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
             <a href="#">My offers</a>
+          </li>
+          <li class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="#">My loads</a>
+          </li>
+          <li class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="#">Post loads</a>
           </li>
         </ul>
       </div>
