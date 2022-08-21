@@ -2,8 +2,8 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Load = ({ load }) => {
   return (
-    <div className="flex gap-4 p-4 my-2 border border-l-4 border-transparent hover:shadow-md active:border active:border-l-4 active:border-sky-500">
-      <div className="flex items-center w-1/2 p-2 bg-slate-100">
+    <div className="flex gap-4 p-2 my-2 text-lg border border-l-4 border-transparent hover:shadow-md active:border active:border-l-4 active:border-sky-500 active:bg-slate-100">
+      <div className="flex items-center w-1/2 p-2 bg-slate-100  leading-8">
         <div className="flex flex-col w-2/5">
           <span>{load.shipper.city}</span>
           <span className="text-sm">
