@@ -23,7 +23,7 @@ const App = () => {
 
         <Header />
         <main className="flex justify-start items-start">
-          <div className="w-full mx-auto py-6 sm:px-6 md:w-5/6 lg:px-8">
+          <div className="w-full py-6 sm:px-6 lg:px-8">
             <div className="px-4 py-6 sm:px-0">
               <Routes>
                 <Route path="/" element={<Loads />} />

@@ -4,7 +4,7 @@ import Load from "./Load/Load";
 
 const Loads = () => {
   const loads = useSelector((state) => state.loads);
-
+  console.log(loads);
   return (
     <div className="border-4 border-2 border-gray-200 rounded-lg min-h-full">
       {!loads.length ? (
