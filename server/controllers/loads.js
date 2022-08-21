@@ -10,7 +10,7 @@ export const getLoads = async (req, res) => {
   }
 };
 
-export const addLoads = async (req, res) => {
+export const addLoad = async (req, res) => {
   const load = req.body;
 
   const newLoad = new LoadDetail(load);
@@ -21,4 +21,22 @@ export const addLoads = async (req, res) => {
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
+};
+
+export const updateLoad = async (req, res) => {
+  const { id: _id } = req.params;
+  const load = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No loads with that id");
+
+  const updatedLoad = await LoadDetail.findByIdAndUpdate(
+    _id,
+    { ...load, _id },
+    {
+      new: true,
+    }
+  );
+
+  res.json(updatedLoad);
 };

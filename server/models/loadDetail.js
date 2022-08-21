@@ -1,11 +1,5 @@
 import mongoose from "mongoose";
 
-const AddressSchema = mongoose.Schema({
-  city: String,
-  street: String,
-  zipcode: String,
-});
-
 const loadSchema = mongoose.Schema({
   shipper: {
     name: String,
