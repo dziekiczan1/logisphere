@@ -28,19 +28,19 @@ const Load = ({ load, setCurrentId }) => {
         </div>
       </div>
       <div className="flex justify-between w-1/2 p-2">
-        <div>
+        <div className="w-1/5">
           <span>{load.distance} miles</span>
         </div>
-        <div>
+        <div className="w-1/5">
           <span>{load.weight} lbs</span>
         </div>
-        <div>
+        <div className="w-1/5">
           <span>{load.trailer}</span>
         </div>
-        <div>
+        <div className="w-1/5">
           <span className="font-semibold">{load.price} USD</span>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-1/5">
           <Button onClick={() => setCurrentId(load._id)}>
             <AiOutlineEdit className="text-lg" />
           </Button>

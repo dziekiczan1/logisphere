@@ -50,9 +50,11 @@ const Form = ({ currentId, setCurrentId }) => {
     } else {
       dispatch(createLoad(loadData));
     }
+    clear();
   };
 
   const clear = () => {
+    setCurrentId(null);
     setLoadData({
       shipper: {
         name: "",
@@ -85,9 +87,9 @@ const Form = ({ currentId, setCurrentId }) => {
       noValidate
       autoComplete="off"
       onSubmit={handleSubmit}
-      className="flex flex-col items-center"
+      className="flex flex-col items-center w-full"
     >
-      <div className="bg-gray-100 px-4 py-2 w-2/3 my-2 ">
+      <div className="bg-gray-100 px-4 py-2 my-2 ">
         <h4 className="text-lg font-bold">Shipper</h4>
         <div className="gap-4 flex flex-wrap justify-between mt-6">
           <TextField
@@ -197,7 +199,7 @@ const Form = ({ currentId, setCurrentId }) => {
           />
         </div>
       </div>
-      <div className="bg-gray-100 px-4 py-2 w-2/3 my-2">
+      <div className="bg-gray-100 px-4 py-2 my-2">
         <h4 className="text-lg font-bold">Consignee</h4>
         <div className="gap-4 flex flex-wrap justify-between mt-6">
           <TextField
@@ -308,7 +310,7 @@ const Form = ({ currentId, setCurrentId }) => {
         </div>
       </div>
 
-      <div className="bg-gray-100 px-4 py-2 w-2/3 my-2">
+      <div className="bg-gray-100 px-4 py-2 my-2">
         <h4 className="text-lg font-bold">Freight Information</h4>
         <div className="gap-4 flex flex-wrap justify-between mt-6">
           <TextField

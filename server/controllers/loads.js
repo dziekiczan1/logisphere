@@ -30,9 +30,13 @@ export const updateLoad = async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(_id))
     return res.status(404).send("No loads with that id");
 
-  const updatedLoad = await LoadDetail.findByIdAndUpdate(_id, load, {
-    new: true,
-  });
+  const updatedLoad = await LoadDetail.findByIdAndUpdate(
+    _id,
+    { ...load, _id },
+    {
+      new: true,
+    }
+  );
 
   res.json(updatedLoad);
 };
