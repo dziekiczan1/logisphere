@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
@@ -8,6 +8,7 @@ import Form from "./components/Form/Form";
 import { getLoads } from "./redux/loadSlice";
 
 const App = () => {
+  const [currentId, setCurrentId] = useState();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,8 +27,16 @@ const App = () => {
           <div className="w-full py-6 sm:px-6 lg:px-8">
             <div className="px-4 py-6 sm:px-0">
               <Routes>
-                <Route path="/" element={<Loads />} />
-                <Route path="/addloads" element={<Form />} />
+                <Route
+                  path="/"
+                  element={<Loads setCurrentId={setCurrentId} />}
+                />
+                <Route
+                  path="/addloads"
+                  element={
+                    <Form currentId={currentId} setCurrentId={setCurrentId} />
+                  }
+                />
               </Routes>
             </div>
           </div>

@@ -14,16 +14,16 @@ const Navbar = () => {
       </div>
       <div className="flex items-center justify-center">
         <ul className="flex flex-row justify-center gap-2 mt-4 md:gap-4 md:mt-0">
-          <li class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium text-center">
+          <li className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium text-center">
             <Link to="/">Find loads</Link>
           </li>
-          <li class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <li className="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
             <Link to="/myoffers">My offers</Link>
           </li>
-          <li class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <li className="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
             <Link to="/myloads">My loads</Link>
           </li>
-          <li class="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <li className="text-gray-300 text-center hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
             <Link to="/addloads">Post loads</Link>
           </li>
         </ul>

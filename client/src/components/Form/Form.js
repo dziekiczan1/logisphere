@@ -1,13 +1,20 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createLoad } from "../../redux/loadSlice";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createLoad, updateLoad } from "../../redux/loadSlice";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
+  const load = useSelector((state) =>
+    currentId ? state.loads.find((l) => l._id === currentId) : null
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (load) setLoadData(load);
+  }, [load]);
 
   const [loadData, setLoadData] = useState({
     shipper: {
@@ -37,7 +44,12 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createLoad(loadData));
+
+    if (currentId) {
+      dispatch(updateLoad(currentId, loadData));
+    } else {
+      dispatch(createLoad(loadData));
+    }
   };
 
   const clear = () => {

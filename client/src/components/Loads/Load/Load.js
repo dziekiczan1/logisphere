@@ -1,6 +1,11 @@
-import { AiOutlineArrowRight } from "react-icons/ai";
+import Button from "@mui/material/Button";
+import {
+  AiOutlineArrowRight,
+  AiOutlineEdit,
+  AiOutlineDelete,
+} from "react-icons/ai";
 
-const Load = ({ load }) => {
+const Load = ({ load, setCurrentId }) => {
   return (
     <div className="flex gap-4 p-2 my-2 text-lg border border-l-4 border-transparent hover:shadow-md active:border active:border-l-4 active:border-sky-500 active:bg-slate-100">
       <div className="flex items-center w-1/2 p-2 bg-slate-100  leading-8">
@@ -34,6 +39,14 @@ const Load = ({ load }) => {
         </div>
         <div>
           <span className="font-semibold">{load.price} USD</span>
+        </div>
+        <div className="flex flex-col">
+          <Button onClick={() => setCurrentId(load._id)}>
+            <AiOutlineEdit className="text-lg" />
+          </Button>
+          <Button onClick={() => {}}>
+            <AiOutlineDelete className="text-lg" />
+          </Button>
         </div>
       </div>
     </div>
