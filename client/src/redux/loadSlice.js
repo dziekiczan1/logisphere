@@ -24,6 +24,15 @@ export const updateLoad = (id, load) => async (dispatch) => {
   }
 };
 
+export const deleteLoad = (id) => async (dispatch) => {
+  try {
+    await api.deleteLoad(id);
+    dispatch(remove(id));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const loadSlice = createSlice({
   name: "loads",
   initialState: {
@@ -37,9 +46,12 @@ export const loadSlice = createSlice({
       return [...state, action.payload];
     },
     update: (state, action) => {
-      return state.loads?.map((load) =>
+      return state.loads.map((load) =>
         load._id === action.payload._id ? action.payload : load
       );
+    },
+    remove: (state, action) => {
+      return state.loads.filter((load) => load._id !== action.payload);
     },
   },
 });
