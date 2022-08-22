@@ -8,11 +8,11 @@ import { BsCircle, BsCircleFill } from "react-icons/bs";
 
 const Load = ({ load, setCurrentId }) => {
   return (
-    <div className="flex flex-col md:flex-row md:gap-4 md:p-2 my-2 text-md md:text-lg md:border md:border-l-4 border-transparent md:hover:shadow-md md:active:border md:active:border-l-4 md:active:border-sky-500 md:active:bg-slate-100">
-      <div className="flex flex-col md:flex-row md:items-center w-full md:w-1/2 px-2 py-1 md:p-2 bg-slate-100  leading-8">
-        <div className="flex flex-row w-2/5">
+    <div className="flex flex-col md:flex-row md:gap-4 md:my-2 text-md md:text-lg md:border md:border-l-4 border-transparent md:hover:shadow-md md:active:border md:active:border-l-4 md:active:border-sky-500 md:active:bg-slate-100">
+      <div className="flex flex-col md:flex-row md:items-center w-full md:w-1/2 px-2 py-1 md:p-2 bg-slate-100">
+        <div className="flex flex-row w-full md:w-2/5">
           <div className="flex justify-center mr-2 md:hidden">
-            <BsCircle className="text-lg md:hidden text-sky-700 mt-2" />
+            <BsCircle className="text-lg md:hidden text-sky-700 mt-1" />
           </div>
           <div className="flex flex-col">
             <span>{load.shipper.city}</span>
@@ -25,9 +25,9 @@ const Load = ({ load, setCurrentId }) => {
         <div className="w-1/5 hidden md:flex">
           <AiOutlineArrowRight />
         </div>
-        <div className="flex flex-row w-2/5">
+        <div className="flex flex-row w-full md:w-2/5 mt-2 md:mt-0">
           <div className="flex justify-center mr-2 md:hidden">
-            <BsCircleFill className="text-lg md:hidden text-sky-700 mt-2" />
+            <BsCircleFill className="text-lg md:hidden text-sky-700 mt-1" />
           </div>
           <div className="flex flex-col">
             <span>{load.consignee.city}</span>
@@ -52,11 +52,11 @@ const Load = ({ load, setCurrentId }) => {
           <span>{load.price} USD</span>
           <span className="text-sky-500 text-sm">Book or Offer</span>
         </div>
-        <div className="flex flex-row justify-end md:flex-col md:justify-start w-1/2 md:w-1/5">
-          <Button onClick={() => setCurrentId(load._id)}>
+        <div className="flex flex-row justify-end md:flex-col md:justify-start md:items-center w-1/2 md:w-1/6">
+          <Button onClick={() => setCurrentId(load._id)} className="w-2/3">
             <AiOutlineEdit className="text-lg" />
           </Button>
-          <Button onClick={() => {}}>
+          <Button onClick={() => {}} className="w-2/3">
             <AiOutlineDelete className="text-lg" />
           </Button>
         </div>
