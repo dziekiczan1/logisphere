@@ -34,7 +34,12 @@ const App = () => {
               <Routes>
                 <Route
                   path="/"
-                  element={<Loads setCurrentId={setCurrentId} />}
+                  element={
+                    <Loads
+                      setCurrentId={setCurrentId}
+                      handleShow={handleShow}
+                    />
+                  }
                 />
                 <Route
                   path="/addloads"

@@ -45,16 +45,13 @@ export const loadSlice = createSlice({
     createNewLoad: (state, action) => {
       return [...state, action.payload];
     },
-    update: (state, action) => {
-      return state.loads.map((load) =>
+    update: (loads, action) => {
+      return loads?.map((load) =>
         load._id === action.payload._id ? action.payload : load
       );
     },
-    remove: (state, action) => {
-      return {
-        ...state,
-        loads: state.loads.filter((load) => load._id !== action.payload),
-      };
+    remove: (loads, action) => {
+      return loads?.filter((load) => load._id !== action.payload);
     },
   },
 });

@@ -8,7 +8,7 @@ import { BsCircle, BsCircleFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { deleteLoad } from "../../../redux/loadSlice";
 
-const Load = ({ load, setCurrentId }) => {
+const Load = ({ load, setCurrentId, handleShow }) => {
   const dispatch = useDispatch();
   return (
     <div className="flex flex-col md:flex-row md:gap-4 md:my-2 text-md md:text-lg md:border md:border-l-4 border-transparent md:hover:shadow-md md:active:border md:active:border-l-4 md:active:border-sky-500 md:active:bg-slate-100">
@@ -56,7 +56,13 @@ const Load = ({ load, setCurrentId }) => {
           <span className="text-sky-500 text-sm">Book or Offer</span>
         </div>
         <div className="flex flex-row justify-end md:flex-col md:justify-start md:items-center w-1/2 md:w-1/6">
-          <Button onClick={() => setCurrentId(load._id)} className="w-2/3">
+          <Button
+            onClick={() => {
+              handleShow();
+              setCurrentId(load._id);
+            }}
+            className="w-2/3"
+          >
             <AiOutlineEdit className="text-lg" />
           </Button>
           <Button
