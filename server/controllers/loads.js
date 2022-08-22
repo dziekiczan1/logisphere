@@ -48,6 +48,5 @@ export const deleteLoad = async (req, res) => {
     return res.status(404).send("No loads with that id");
 
   await LoadDetail.findByIdAndRemove(id);
-
   res.json({ message: "Load removed" });
 };

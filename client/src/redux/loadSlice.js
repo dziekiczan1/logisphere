@@ -51,11 +51,14 @@ export const loadSlice = createSlice({
       );
     },
     remove: (state, action) => {
-      return state.loads.filter((load) => load._id !== action.payload);
+      return {
+        ...state,
+        loads: state.loads.filter((load) => load._id !== action.payload),
+      };
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { fetchAllLoads, createNewLoad, update } = loadSlice.actions;
+export const { fetchAllLoads, createNewLoad, update, remove } =
+  loadSlice.actions;
 export default loadSlice.reducer;

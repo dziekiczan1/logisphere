@@ -5,8 +5,11 @@ import {
   AiOutlineDelete,
 } from "react-icons/ai";
 import { BsCircle, BsCircleFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { deleteLoad } from "../../../redux/loadSlice";
 
 const Load = ({ load, setCurrentId }) => {
+  const dispatch = useDispatch();
   return (
     <div className="flex flex-col md:flex-row md:gap-4 md:my-2 text-md md:text-lg md:border md:border-l-4 border-transparent md:hover:shadow-md md:active:border md:active:border-l-4 md:active:border-sky-500 md:active:bg-slate-100">
       <div className="flex flex-col md:flex-row md:items-center w-full md:w-1/2 px-2 py-1 md:p-2 bg-slate-100">
@@ -56,7 +59,10 @@ const Load = ({ load, setCurrentId }) => {
           <Button onClick={() => setCurrentId(load._id)} className="w-2/3">
             <AiOutlineEdit className="text-lg" />
           </Button>
-          <Button onClick={() => {}} className="w-2/3">
+          <Button
+            onClick={() => dispatch(deleteLoad(load._id))}
+            className="w-2/3"
+          >
             <AiOutlineDelete className="text-lg" />
           </Button>
         </div>
