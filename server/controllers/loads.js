@@ -40,3 +40,14 @@ export const updateLoad = async (req, res) => {
 
   res.json(updatedLoad);
 };
+
+export const deleteLoad = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("No loads with that id");
+
+  await LoadDetail.findByIdAndRemove(id);
+
+  res.json({ message: "Load removed" });
+};
