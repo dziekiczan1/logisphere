@@ -20,24 +20,22 @@ const Home = () => {
   }, [currentId, dispatch]);
 
   return (
-    <main className="flex flex-col justify-start items-start">
-      <div className="w-full py-6 sm:px-6 lg:px-8">
-        <div className="px-4 sm:px-0">
-          <Loads setCurrentId={setCurrentId} handleShow={handleShow} />
-        </div>
-        <Button onClick={handleShow}>Click me</Button>
-        <Drawer
-          anchor="right"
-          open={show}
-          onClose={handleClose}
-          PaperProps={{
-            sx: { width: "45%" },
-          }}
-        >
-          <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </Drawer>
+    <>
+      <div className="px-4 sm:px-0">
+        <Loads setCurrentId={setCurrentId} handleShow={handleShow} />
       </div>
-    </main>
+      <Button onClick={handleShow}>Click me</Button>
+      <Drawer
+        anchor="right"
+        open={show}
+        onClose={handleClose}
+        PaperProps={{
+          sx: { width: "45%" },
+        }}
+      >
+        <Form currentId={currentId} setCurrentId={setCurrentId} />
+      </Drawer>
+    </>
   );
 };
 

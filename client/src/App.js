@@ -11,11 +11,15 @@ const App = () => {
       <div className="min-h-full">
         <Navbar />
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/addloads" element={<Form />} />
-          <Route path="/auth" element={<Auth />} />
-        </Routes>
+        <main className="flex flex-col justify-start items-start">
+          <div className="w-full py-6 sm:px-6 lg:px-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/addloads" element={<Form />} />
+              <Route path="/auth" element={<Auth />} />
+            </Routes>
+          </div>
+        </main>
       </div>
     </BrowserRouter>
   );
