@@ -7,7 +7,7 @@ export const signin = (formData, navigate) => async (dispatch) => {
     dispatch(authenticate(data));
     navigate("/");
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 
@@ -28,7 +28,6 @@ export const authSlice = createSlice({
   },
   reducers: {
     authenticate: (state, action) => {
-      console.log(action);
       localStorage.setItem("profile", JSON.stringify({ ...action?.payload }));
       return { ...state, authData: action?.payload };
     },

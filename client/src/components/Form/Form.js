@@ -11,6 +11,7 @@ const Form = ({ currentId, setCurrentId }) => {
     currentId ? state.loads.find((l) => l._id === currentId) : null
   );
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("profile"));
 
   useEffect(() => {
     if (load) setLoadData(load);
@@ -81,6 +82,11 @@ const Form = ({ currentId, setCurrentId }) => {
       price: "",
     });
   };
+
+  if (!user?.result?.name) {
+    return <h2 className="text-warning">Please Sign In.</h2>;
+  }
+
   return (
     <Box
       component="form"
