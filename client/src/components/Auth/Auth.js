@@ -15,10 +15,11 @@ import Input from "./Input";
 import { signin, signup } from "../../redux/authSlice";
 
 const initialState = {
-  nickName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+  firstName: "First Name",
+  lastName: "Last Name",
+  email: "Email address",
+  password: "Password",
+  confirmPassword: "Confirm Password",
 };
 
 const Auth = () => {

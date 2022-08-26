@@ -4,7 +4,7 @@ import * as api from "../api";
 export const signin = (formData, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signIn(formData);
-    dispatch(auth(data));
+    dispatch(authenticate(data));
     navigate("/");
   } catch (error) {
     console.log(error.message);
@@ -14,10 +14,10 @@ export const signin = (formData, navigate) => async (dispatch) => {
 export const signup = (formData, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signUp(formData);
-    dispatch(auth(data));
+    dispatch(authenticate(data));
     navigate("/");
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 
@@ -27,7 +27,8 @@ export const authSlice = createSlice({
     authData: null,
   },
   reducers: {
-    auth: (state, action) => {
+    authenticate: (state, action) => {
+      console.log(action);
       localStorage.setItem("profile", JSON.stringify({ ...action?.payload }));
       return { ...state, authData: action?.payload };
     },
@@ -39,5 +40,5 @@ export const authSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { auth, logOut } = authSlice.actions;
+export const { authenticate, logOut } = authSlice.actions;
 export default authSlice.reducer;
