@@ -52,16 +52,19 @@ const Auth = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Paper elevation={3}>
+    <Container component="main" maxWidth="sm">
+      <Paper
+        elevation={3}
+        className="flex flex-col items-center justify-center py-4"
+      >
         <Avatar>
           <LockOutlinedIcon />
         </Avatar>
         <Typography variant="h5">
           {isSignup ? "Sign up" : "Sign in"}{" "}
         </Typography>
-        <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
+        <form onSubmit={handleSubmit} className="p-4 w-full">
+          <Grid>
             {isSignup && (
               <>
                 <Input
