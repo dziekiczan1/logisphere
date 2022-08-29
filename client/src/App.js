@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
@@ -7,6 +7,7 @@ import LoadDetails from "./components/LoadDetails/LoadDetails";
 import Auth from "./components/Auth/Auth";
 
 const App = () => {
+  const user = JSON.parse(localStorage.getItem("profile"));
   return (
     <BrowserRouter>
       <div className="min-h-full">
@@ -19,7 +20,10 @@ const App = () => {
               <Route path="/loads" element={<Home />} />
               <Route path="/loads/:id" element={<LoadDetails />} />
               <Route path="/addloads" element={<Form />} />
-              <Route path="/auth" element={<Auth />} />
+              <Route
+                path="/auth"
+                element={!user ? <Auth /> : <Navigate to="/loads" />}
+              />
             </Routes>
           </div>
         </main>
