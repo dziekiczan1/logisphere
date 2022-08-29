@@ -12,6 +12,22 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  let headerText;
+
+  switch (location.pathname) {
+    case "/addloads":
+      headerText = "Add new load";
+      break;
+    case "/myoffers":
+      headerText = "My offers";
+      break;
+    case "/myloads":
+      headerText = "My loads";
+      break;
+    default:
+      headerText = "Available loads";
+  }
+
   const logout = () => {
     dispatch(logOut());
     setUser(null);
@@ -33,7 +49,7 @@ const Header = () => {
       <div className="flex flex-col md:flex-row items-center justify-between py-6 px-4 sm:px-6 lg:px-8 gap-4">
         <div>
           <h1 className="text-3xl tracking-tight font-bold text-gray-900">
-            Available loads
+            {headerText}
           </h1>
         </div>
         <>

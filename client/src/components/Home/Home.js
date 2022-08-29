@@ -1,11 +1,12 @@
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-
-import Loads from "../Loads/Loads";
-import Form from "..//Form/Form";
-import { getLoads } from "../../redux/loadSlice";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
+
+import { getLoads } from "../../redux/loadSlice";
+import Loads from "../Loads/Loads";
+import Form from "../Form/Form";
+import Search from "../Search/Search";
 
 const Home = () => {
   const [currentId, setCurrentId] = useState();
@@ -21,6 +22,7 @@ const Home = () => {
 
   return (
     <>
+      <Search />
       <div className="px-4 sm:px-0">
         <Loads setCurrentId={setCurrentId} handleShow={handleShow} />
       </div>
