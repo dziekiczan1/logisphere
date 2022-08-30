@@ -1,9 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import * as api from "../api";
 
+export const getLoadsBySearch = (searchQuery) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchLoadsBySearch(searchQuery);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const getLoads = () => async (dispatch) => {
-  const { data } = await api.fetchLoads();
-  dispatch(fetchAllLoads(data));
+  try {
+    const { data } = await api.fetchLoads();
+    dispatch(fetchAllLoads(data));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const createLoad = (load) => async (dispatch) => {
