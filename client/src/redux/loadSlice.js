@@ -7,6 +7,7 @@ export const getLoadsBySearch = (searchQuery) => async (dispatch) => {
       data: { data },
     } = await api.fetchLoadsBySearch(searchQuery);
     console.log(data);
+    dispatch(fetchAllLoadsBySearch(data));
   } catch (error) {
     console.log(error);
   }
@@ -57,6 +58,9 @@ export const loadSlice = createSlice({
     fetchAllLoads: (state, action) => {
       return action.payload;
     },
+    fetchAllLoadsBySearch: (state, action) => {
+      return action.payload;
+    },
     createNewLoad: (state, action) => {
       return [...state, action.payload];
     },
@@ -71,6 +75,11 @@ export const loadSlice = createSlice({
   },
 });
 
-export const { fetchAllLoads, createNewLoad, update, remove } =
-  loadSlice.actions;
+export const {
+  fetchAllLoads,
+  fetchAllLoadsBySearch,
+  createNewLoad,
+  update,
+  remove,
+} = loadSlice.actions;
 export default loadSlice.reducer;

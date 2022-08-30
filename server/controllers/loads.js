@@ -13,11 +13,9 @@ export const getLoads = async (req, res) => {
 
 export const getLoadsBySearch = async (req, res) => {
   const { searchQuery } = req.query;
-
   try {
     const title = new RegExp(searchQuery, "i");
     const loads = await LoadDetail.find({ title });
-
     res.json({ data: loads });
   } catch (error) {
     res.status(404).json({ message: error.message });

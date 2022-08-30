@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
 import LoadDetails from "./components/LoadDetails/LoadDetails";
+import Loads from "./components/Loads/Loads";
 import Auth from "./components/Auth/Auth";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/loads" element={<Home />} />
+              <Route path="/loads/search" element={<Loads />} />
               <Route path="/loads/:id" element={<LoadDetails />} />
               <Route path="/addloads" element={<Form />} />
               <Route
