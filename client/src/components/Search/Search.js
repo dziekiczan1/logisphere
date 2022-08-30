@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
+import { getLoadsBySearch } from "../../redux/loadSlice";
+
 const Search = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
@@ -17,7 +19,7 @@ const Search = () => {
 
   const searchPost = () => {
     if (search.trim()) {
-      // dispatch(getPostsBySearch({ search }));
+      dispatch(getLoadsBySearch({ search }));
       navigate(`/loads/search?searchQuery=${search || "none"}`);
     } else {
       navigate("/");

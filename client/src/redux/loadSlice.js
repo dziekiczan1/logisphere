@@ -3,7 +3,10 @@ import * as api from "../api";
 
 export const getLoadsBySearch = (searchQuery) => async (dispatch) => {
   try {
-    const { data } = await api.fetchLoadsBySearch(searchQuery);
+    const {
+      data: { data },
+    } = await api.fetchLoadsBySearch(searchQuery);
+    console.log(data);
   } catch (error) {
     console.log(error);
   }
