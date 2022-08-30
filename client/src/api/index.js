@@ -15,6 +15,8 @@ API.interceptors.request.use((req) => {
 });
 
 export const fetchLoads = () => API.get(`/loads`);
+export const fetchLoadsBySearch = (searchQuery) =>
+  API.get(`/loads/search?searchQuery=${searchQuery.search || "none"}`);
 export const createLoad = (newLoad) => API.post(`/loads`, newLoad);
 export const updateLoad = (id, updatedLoad) =>
   API.patch(`/loads/${id}`, updatedLoad);
