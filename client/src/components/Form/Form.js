@@ -84,7 +84,7 @@ const Form = ({ currentId, setCurrentId }) => {
   };
 
   if (!user?.result?.name) {
-    return <h2 className="text-warning">Please Sign In.</h2>;
+    return <h2 className="text-2xl text-center">Please Sign In.</h2>;
   }
 
   return (

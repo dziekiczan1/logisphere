@@ -27,7 +27,7 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div className="mb-4 mx-4">
       <TextField
         name="search"
         label="From"
@@ -36,7 +36,7 @@ const Search = () => {
         onChange={(e) => setSearch(e.target.value)}
       />
       <Button onClick={searchPost}>Search</Button>
-    </>
+    </div>
   );
 };
 
