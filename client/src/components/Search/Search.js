@@ -19,7 +19,7 @@ const Search = () => {
 
   const searchPost = () => {
     if (search.trim()) {
-      dispatch(getLoadsBySearch({ search }));
+      dispatch(getLoadsBySearch(search));
       navigate(`/loads/search?searchQuery=${search || "none"}`);
     } else {
       navigate("/");
@@ -29,12 +29,13 @@ const Search = () => {
   return (
     <div className="mb-4 mx-4">
       <TextField
-        name="search"
+        name="searchfrom"
         label="From"
         onKeyPress={handleKeyPress}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <TextField name="searchto" label="To" onChange={() => {}} />
       <Button onClick={searchPost}>Search</Button>
     </div>
   );
