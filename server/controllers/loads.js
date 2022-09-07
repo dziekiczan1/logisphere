@@ -1,6 +1,16 @@
 import mongoose from "mongoose";
 import LoadDetail from "../models/loadDetail.js";
 
+export const getLoad = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const post = await LoadDetail.findById(id);
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
 export const getLoads = async (req, res) => {
   try {
     const loadDetails = await LoadDetail.find();
@@ -13,9 +23,12 @@ export const getLoads = async (req, res) => {
 
 export const getLoadsBySearch = async (req, res) => {
   const { searchQuery } = req.query;
+  console.log(req.query);
   try {
+    console.log(searchQuery);
     const title = new RegExp(searchQuery, "i");
     const loads = await LoadDetail.find({ title });
+    console.log(loads);
     res.json({ data: loads });
   } catch (error) {
     res.status(404).json({ message: error.message });

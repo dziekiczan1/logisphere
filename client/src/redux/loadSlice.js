@@ -8,7 +8,7 @@ export const getLoadsBySearch = (searchQuery) => async (dispatch) => {
     } = await api.fetchLoadsBySearch(searchQuery);
     dispatch(fetchAllLoadsBySearch(data));
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 

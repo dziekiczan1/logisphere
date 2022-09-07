@@ -27,7 +27,7 @@ const Search = () => {
   };
 
   return (
-    <div className="mb-4 mx-4">
+    <div className="mb-4 flex flex-row gap-4">
       <TextField
         name="searchfrom"
         label="From"
