@@ -22,12 +22,12 @@ export const getLoads = async (req, res) => {
 };
 
 export const getLoadsBySearch = async (req, res) => {
-  const { searchQuery } = req.query;
+  const searchQuery = req.query;
   console.log(req.query);
   try {
     console.log(searchQuery);
-    const title = new RegExp(searchQuery, "i");
-    const loads = await LoadDetail.find({ title });
+    const origin = new RegExp(searchQuery, "i");
+    const loads = await LoadDetail.find({ food });
     console.log(loads);
     res.json({ data: loads });
   } catch (error) {
