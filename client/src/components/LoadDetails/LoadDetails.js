@@ -1,8 +1,10 @@
 import Dialog from "@mui/material/Dialog";
 import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
+import CloseIcon from "@mui/icons-material/Close";
 
 const LoadDetails = (props) => {
+  console.log(props);
   return (
     <Dialog
       aria-labelledby="transition-modal-title"
@@ -17,12 +19,16 @@ const LoadDetails = (props) => {
         sx: { width: "80%" },
       }}
     >
-      <div className="flex flex-col p-4">
-        <div className="sticky top-0">
+      <div className="flex flex-col p-4 py-2">
+        <div className="sticky top-0 flex flex-row justify-between items-center">
           <p className="text-black text-xl">
             Load #{props.load._id.slice(0, 8)}
           </p>
+          <Button onClick={props.onClose}>
+            <CloseIcon className="text-lg" />
+          </Button>
         </div>
+        <hr className="py-2" />
         <div>
           <p className="text-black">{props.load.shipper.city}</p>
         </div>
