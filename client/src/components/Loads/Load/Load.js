@@ -28,9 +28,9 @@ const Load = ({ load, setCurrentId, handleShow }) => {
     setOpen(false);
   };
 
-  const openLoad = () => {
-    navigate(`/loads/${load._id}`);
-  };
+  // const openLoad = () => {
+  //   navigate(`/loads/${load._id}`);
+  // };
 
   return (
     <>
