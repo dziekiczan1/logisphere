@@ -63,7 +63,18 @@ const LoadDetails = (props) => {
               </div>
             </div>
           </div>
-          <div className="h-[600px] bg-slate">ss</div>
+          <div className="mt-2 px-4">
+            <span className="text-lg font-medium">Requirements</span>
+            <div className="flex flex-col my-4">
+              <span className="text-sm">Equipment</span>
+              <span>{props.load.trailer}</span>
+            </div>
+            <hr className="py-2" />
+          </div>
+          <div className="mt-2">
+            <span className="text-lg font-medium">Commodity</span>
+            <hr className="py-2" />
+          </div>
         </div>
         <div className="sticky bottom-0 flex gap-4">
           <Button variant="contained" className="w-1/2">
