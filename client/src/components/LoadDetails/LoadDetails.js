@@ -31,7 +31,7 @@ const LoadDetails = (props) => {
           </Button>
         </div>
         <hr className="py-2" />
-        <div className="max-h-[50vh] mb-4 overflow-y-auto">
+        <div className="max-h-[70vh] mb-4 overflow-y-auto">
           <div className="flex flex-col w-full px-2 py-1 bg-slate-100">
             <div className="flex flex-row w-full ">
               <div className="flex justify-center mr-2">
@@ -39,6 +39,7 @@ const LoadDetails = (props) => {
               </div>
               <div className="flex flex-col">
                 <span className="uppercase">Pickup</span>
+                <span className="italic">{props.load.shipper.name}</span>
                 <span className="font-semibold">{props.load.shipper.city}</span>
                 <span className="text-sm">
                   {new Date(props.load.shipper.date).toLocaleDateString()}{" "}
@@ -53,6 +54,7 @@ const LoadDetails = (props) => {
               </div>
               <div className="flex flex-col">
                 <span className="uppercase">Dropoff</span>
+                <span className="italic">{props.load.consignee.name}</span>
                 <span className="font-semibold">
                   {props.load.consignee.city}
                 </span>
@@ -65,14 +67,27 @@ const LoadDetails = (props) => {
           </div>
           <div className="mt-2 px-4">
             <span className="text-lg font-medium">Requirements</span>
-            <div className="flex flex-col my-4">
-              <span className="text-sm">Equipment</span>
-              <span>{props.load.trailer}</span>
+            <div className="flex flex-row">
+              <div className="flex flex-col my-4 w-1/2">
+                <span className="text-sm">Equipment</span>
+                <span>{props.load.trailer}</span>
+                <span className="text-sm mt-4">Team Only</span>
+                <span>{props.load.trailer}</span>
+                <span className="text-sm mt-4">Drop trailer</span>
+                <span>{props.load.trailer}</span>
+              </div>
+              <div className="flex flex-col my-4 w-1/2">
+                <span className="text-sm">Weight</span>
+                <span>{props.load.weight} lbs</span>
+                <span className="text-sm mt-4">Distance</span>
+                <span>{props.load.distance} miles</span>
+              </div>
             </div>
             <hr className="py-2" />
           </div>
-          <div className="mt-2">
+          <div className="mt-2 px-4 flex flex-col">
             <span className="text-lg font-medium">Commodity</span>
+            <span className="my-4">{props.load.commodity}</span>
             <hr className="py-2" />
           </div>
         </div>
