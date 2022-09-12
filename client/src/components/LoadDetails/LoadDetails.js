@@ -78,9 +78,19 @@ const LoadDetails = (props) => {
               </div>
               <div className="flex flex-col my-4 w-1/2">
                 <span className="text-sm">Weight</span>
-                <span>{props.load.weight} lbs</span>
+                <span>
+                  {props.load.weight.toLocaleString(undefined, {
+                    minimumFractionDigits: 0,
+                  })}{" "}
+                  lbs
+                </span>
                 <span className="text-sm mt-4">Distance</span>
-                <span>{props.load.distance} miles</span>
+                <span>
+                  {props.load.distance.toLocaleString(undefined, {
+                    minimumFractionDigits: 0,
+                  })}{" "}
+                  miles
+                </span>
               </div>
             </div>
             <hr className="py-2" />
@@ -93,7 +103,11 @@ const LoadDetails = (props) => {
         </div>
         <div className="sticky bottom-0 flex gap-4">
           <Button variant="contained" className="w-1/2">
-            Book ({props.load.price} USD)
+            Book (
+            {props.load.price.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+            })}{" "}
+            USD)
           </Button>
           <Button variant="outlined" className="w-1/2">
             Make Offer
