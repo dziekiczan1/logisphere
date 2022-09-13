@@ -34,7 +34,7 @@ const Load = ({ load, setCurrentId, handleShow }) => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row md:gap-4 md:my-2 text-md md:text-lg md:border md:border-l-4 border-transparent md:hover:shadow-md md:active:border md:active:border-l-4 md:active:border-sky-500 md:active:bg-slate-100">
+      <div className="flex flex-col md:flex-row md:gap-4 md:my-2 text-md md:border md:border-l-4 border-transparent md:hover:shadow-md md:active:border md:active:border-l-4 md:active:border-sky-500 md:active:bg-slate-100">
         <div
           className="flex flex-col md:flex-row md:items-center w-full md:w-1/2 px-2 py-1 md:p-2 bg-slate-100 cursor-pointer"
           onClick={handleOpen}
@@ -69,16 +69,31 @@ const Load = ({ load, setCurrentId, handleShow }) => {
         </div>
         <div className="flex flex-wrap md:justify-between w-full md:w-1/2 p-2 border-b-2 md:border-b-0 border-gray-200">
           <div className="w-1/3 md:w-1/5 border-r-2 border-gray-300 md:border-r-0">
-            <span>{load.distance} miles</span>
+            <span>
+              {load.distance.toLocaleString(undefined, {
+                minimumFractionDigits: 0,
+              })}{" "}
+              miles
+            </span>
           </div>
           <div className="w-1/3 md:w-1/5 pl-2 border-r-2 border-gray-300 md:border-r-0">
-            <span>{load.weight} lbs</span>
+            <span>
+              {load.weight.toLocaleString(undefined, {
+                minimumFractionDigits: 0,
+              })}{" "}
+              lbs
+            </span>
           </div>
           <div className="w-1/3 md:w-1/5 pl-2 border-r-2 border-gray-300 md:border-r-0">
             <span>{load.trailer}</span>
           </div>
           <div className="w-1/2 md:w-1/5 md:pl-2 font-semibold flex justify-between items-center md:justify-start md:flex-col md:items-end">
-            <span>{load.price} USD</span>
+            <span>
+              {load.price.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+              })}{" "}
+              USD
+            </span>
             <span className="text-sky-500 text-sm">Book or Offer</span>
           </div>
           {isAdmin ? (
