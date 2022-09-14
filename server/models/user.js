@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
     default: false,
   },
   id: { type: String },
+  offers: { type: [String], default: [] },
 });
 
 export default mongoose.model("User", userSchema);

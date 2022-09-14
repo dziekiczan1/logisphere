@@ -32,7 +32,7 @@ const LoadDetails = (props) => {
         </div>
         <hr className="py-2" />
         <div className="max-h-[70vh] mb-4 overflow-y-auto">
-          <div className="flex flex-col w-full px-2 py-1 bg-slate-100">
+          <div className="flex flex-col w-full p-2 bg-slate-100">
             <div className="flex flex-row w-full ">
               <div className="flex justify-center mr-2">
                 <BsCircle className="text-lg text-sky-700 mt-1" />
@@ -101,7 +101,7 @@ const LoadDetails = (props) => {
             <hr className="py-2" />
           </div>
         </div>
-        <div className="sticky bottom-0 flex gap-4">
+        <div className="sticky bottom-0 flex gap-4 mb-4">
           <Button variant="contained" className="w-1/2">
             Book (
             {props.load.price.toLocaleString(undefined, {
