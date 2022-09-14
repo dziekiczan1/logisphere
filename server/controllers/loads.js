@@ -83,4 +83,8 @@ export const bookLoad = async (req, res) => {
     return res.status(404).send("No loads with that id");
 
   const load = await LoadDetail.findById(id);
+
+  await User.updateOne({
+    $push: { offers: load },
+  });
 };
