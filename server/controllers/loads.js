@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import LoadDetail from "../models/loadDetail.js";
+import User from "../models/user.js";
 
 export const getLoad = async (req, res) => {
   const { id } = req.params;
@@ -73,4 +74,13 @@ export const deleteLoad = async (req, res) => {
 
   await LoadDetail.findByIdAndRemove(id);
   res.json({ message: "Load removed" });
+};
+
+export const bookLoad = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("No loads with that id");
+
+  const load = await LoadDetail.findById(id);
 };
