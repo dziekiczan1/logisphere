@@ -6,6 +6,7 @@ import Form from "./components/Form/Form";
 import LoadDetails from "./components/LoadDetails/LoadDetails";
 import Loads from "./components/Loads/Loads";
 import Auth from "./components/Auth/Auth";
+import MyOffers from "./components/MyOffers/MyOffers";
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/loads/search" element={<Loads />} />
               <Route path="/loads/:id" element={<LoadDetails />} />
               <Route path="/addloads" element={<Form />} />
+              <Route path="/myoffers" element={<MyOffers />} />
               <Route
                 path="/auth"
                 element={!user ? <Auth /> : <Navigate to="/loads" />}

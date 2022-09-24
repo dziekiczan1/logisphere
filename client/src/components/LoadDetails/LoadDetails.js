@@ -3,10 +3,12 @@ import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import { BsCircle, BsCircleFill } from "react-icons/bs";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { bookLoad } from "../../redux/userSlice";
 
 const LoadDetails = (props) => {
-  console.log(props);
+  const dispatch = useDispatch();
+
   return (
     <Dialog
       aria-labelledby="transition-modal-title"
@@ -102,7 +104,11 @@ const LoadDetails = (props) => {
           </div>
         </div>
         <div className="sticky bottom-0 flex gap-4 mb-4">
-          <Button variant="contained" className="w-1/2">
+          <Button
+            variant="contained"
+            className="w-1/2"
+            onClick={() => dispatch(bookLoad(props.load._id))}
+          >
             Book (
             {props.load.price.toLocaleString(undefined, {
               minimumFractionDigits: 2,

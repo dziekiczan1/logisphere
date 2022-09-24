@@ -22,5 +22,8 @@ export const updateLoad = (id, updatedLoad) =>
   API.patch(`/loads/${id}`, updatedLoad);
 export const deleteLoad = (id) => API.delete(`/loads/${id}`);
 
+export const bookLoad = (id, bookedLoad) =>
+  API.post(`/loads/${id}`, bookedLoad);
+
 export const signIn = (formData) => API.post(`user/signin`, formData);
 export const signUp = (formData) => API.post(`user/signup`, formData);

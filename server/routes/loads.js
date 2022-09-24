@@ -17,5 +17,7 @@ router.post("/", auth, addLoad);
 router.patch("/:id", auth, updateLoad);
 router.delete("/:id", auth, deleteLoad);
 
-router.patch("/:id", auth, bookLoad);
+// router.patch("/:id", auth, bookLoad);
+// router.get("/:id", auth, bookLoad);
+router.post("/:id", auth, bookLoad);
 export default router;

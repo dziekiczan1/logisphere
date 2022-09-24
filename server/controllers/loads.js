@@ -24,11 +24,9 @@ export const getLoads = async (req, res) => {
 
 export const getLoadsBySearch = async (req, res) => {
   const searchQuery = req.query;
-  console.log(req.query);
   try {
-    console.log(searchQuery);
     const origin = new RegExp(searchQuery, "i");
-    const loads = await LoadDetail.find({ food });
+    const loads = await LoadDetail.find({ origin });
     console.log(loads);
     res.json({ data: loads });
   } catch (error) {
@@ -77,14 +75,18 @@ export const deleteLoad = async (req, res) => {
 };
 
 export const bookLoad = async (req, res) => {
-  const { id } = req.params;
+  // const { id: _id } = req.params;
+  const loadaz = req.body;
+  console.log(req);
+  console.log(req.params);
 
-  if (!mongoose.Types.ObjectId.isValid(id))
-    return res.status(404).send("No loads with that id");
+  // if (!mongoose.Types.ObjectId.isValid(id))
+  //   return res.status(404).send("No loads with that id");
 
-  const load = await LoadDetail.findById(id);
+  // const load = await LoadDetail.findById(id);
 
-  await User.updateOne({
-    $push: { offers: load },
-  });
+  // await User.updateOne({
+  //   $push: { offers: load },
+  // });
+  // res.json({ message: "Load booked" });
 };
