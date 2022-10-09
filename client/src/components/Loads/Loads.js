@@ -7,7 +7,7 @@ const Loads = ({ setCurrentId, handleShow }) => {
   return (
     <div className="border-4 border-2 border-gray-200 rounded-lg min-h-full">
       {!loads.length ? (
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center p-8">
           <CircularProgress />
         </div>
       ) : (
