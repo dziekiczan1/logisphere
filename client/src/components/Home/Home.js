@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 
 import { getLoads } from "../../redux/loadSlice";
 import Loads from "../Loads/Loads";
@@ -26,7 +25,6 @@ const Home = () => {
       <div className="px-4 sm:px-0">
         <Loads setCurrentId={setCurrentId} handleShow={handleShow} />
       </div>
-      <Button onClick={handleShow}>Click me</Button>
       <Drawer
         anchor="right"
         open={show}
